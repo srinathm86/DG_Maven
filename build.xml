@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="AA_Automation_26thMar">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../Eclipse Neon 32 Test NG and CUC/"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="${ECLIPSE_HOME}plugins/org.testng_6.14.2.r201802161450.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/com.beust.jcommander_1.72.0.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.apache-extras.beanshell.bsh_2.0.0.b6.jar"/>
+        <pathelement location="${ECLIPSE_HOME}plugins/org.yaml.snakeyaml_1.17.0.jar"/>
+    </path>
+    <path id="AA_Automation_26thMar.classpath">
+        <pathelement location="target/classes"/>
+        <pathelement location="target/test-classes"/>
+        <path refid="TestNG.libraryclasspath"/>
+        <pathelement location="lib/selenium-server-standalone-3.5.3.jar"/>
+        <pathelement location="lib/AutoItX4Java.jar"/>
+        <pathelement location="lib/cucumber-core-1.2.5.jar"/>
+        <pathelement location="lib/cucumber-html-0.2.6.jar"/>
+        <pathelement location="lib/cucumber-java-1.2.5.jar"/>
+        <pathelement location="lib/cucumber-junit-1.2.5.jar"/>
+        <pathelement location="lib/cucumber-jvm-deps-1.0.5.jar"/>
+        <pathelement location="lib/cucumber-reporting-4.1.0.jar"/>
+        <pathelement location="lib/cucumber-testng-1.2.5.jar"/>
+        <pathelement location="lib/dom4j-1.6.jar"/>
+        <pathelement location="lib/extentreports-java-2.40.2.jar"/>
+        <pathelement location="lib/freemarker-2.3.23.jar"/>
+        <pathelement location="lib/gherkin-2.12.2.jar"/>
+        <pathelement location="lib/guava-21.0.jar"/>
+        <pathelement location="lib/iCOAuto-1.0.jar"/>
+        <pathelement location="lib/iText-5.0.5.jar"/>
+        <pathelement location="lib/jacob.jar"/>
+        <pathelement location="lib/java-client-6.1.0.jar"/>
+        <pathelement location="lib/javax.jms-1.1.jar"/>
+        <pathelement location="lib/jxl.jar"/>
+        <pathelement location="lib/log4j-1.2.15.jar"/>
+        <pathelement location="lib/mockito-all-1.10.19.jar"/>
+        <pathelement location="lib/ojdbc7-12.1.0.2.jar"/>
+        <pathelement location="lib/poi-3.10.1.jar"/>
+        <pathelement location="lib/poi-ooxml-3.10-FINAL.jar"/>
+        <pathelement location="lib/poi-ooxml-schemas-3.10.1.jar"/>
+        <pathelement location="lib/testng-6.8.5.jar"/>
+        <pathelement location="lib/xmlbeans-2.6.0.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <mkdir dir="target/test-classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/java">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src/main/resources">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+                <exclude name="**"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="target/test-classes">
+            <fileset dir="src/test/java">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+        <delete dir="target/test-classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/main/java"/>
+            <src path="src/main/resources"/>
+            <exclude name="**"/>
+            <classpath refid="AA_Automation_26thMar.classpath"/>
+        </javac>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/test-classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src/test/java"/>
+            <classpath refid="AA_Automation_26thMar.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="StartTest">
+        <java classname="com.ibsplc.generic.TestInitiator" failonerror="true" fork="yes">
+            <classpath refid="AA_Automation_26thMar.classpath"/>
+        </java>
+    </target>
+	    <target name="Smoke">
+        <java classname="com.ibsplc.generic.TestInitiator_Smoke" failonerror="true" fork="yes">
+            <classpath refid="AA_Automation_26thMar.classpath"/>
+        </java>
+    </target>
+</project>
