@@ -1,5 +1,5 @@
 package com.ibsplc.common;
-//
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,10 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 
 import org.apache.commons.io.FileUtils;
@@ -36,9 +34,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -539,7 +539,7 @@ public abstract class BasePage {
 			} catch (UnhandledAlertException e) {
 				driver.switchTo().alert().accept();
 				minWait();
-			} catch (Exception e) {
+			} catch (TimeoutException e) {
 				e.printStackTrace();
 			}
 		}
@@ -574,6 +574,7 @@ public abstract class BasePage {
 				minWait();
 			} catch (Exception e) {
 				test.log(LogStatus.FAIL, e);
+				Assert.fail();
 			}
 		}
 		return elem;
@@ -907,7 +908,7 @@ public abstract class BasePage {
 			Thread.sleep(maxWaitTime);
 			Select sel = new Select(element);
 			sel.selectByVisibleText(text);
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			System.out.println("An exception Occured" + e);
 			test.log(LogStatus.FAIL, e);
 			Assert.fail("An exception Occured" + e);
