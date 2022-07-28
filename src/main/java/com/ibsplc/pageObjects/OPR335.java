@@ -1875,17 +1875,6 @@ public class OPR335 extends BasePage {
 		return this;
 	}
 
-	public OPR040 shipperReturn(String awbPre, String awbNo) {
-
-		awbPre = PropertyHandler.getPropValue(dataFilePath, awbPre);
-		awbNo = PropertyHandler.getPropValue(dataFilePath, awbNo);
-
-		list(awbPre, awbNo);
-
-		click(btn_shipperRtrn);
-
-		return new OPR040(driver, dataFileName);
-	}
 
 	/**
 	 * Clears the form

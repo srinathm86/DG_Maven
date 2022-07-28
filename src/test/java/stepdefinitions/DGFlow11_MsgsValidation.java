@@ -113,27 +113,27 @@ public class DGFlow11_MsgsValidation extends BaseSetup {
 	@And("^do export manifest in OPR344 fro REG_DG_016_021_022$")
 	public void export() throws IOException {
 		//OPLNR
-				home.SwitchRoleGroupParameter(data.get("origin"), "OMGR").goToOPR344()
+				/*home.SwitchRoleGroupParameter(data.get("origin"), "OMGR").goToOPR344()
 				.performExportManifestWithAWBasCart(data.get("awbNo1"), data.get("carrierCode"), data.get("fltNo"), data.get("fltDt"), data.get("origin"), data.get("dest"))
-				.close();			
+				.close();*/			
 	}
 	
 	
 	@And("^Generate NOTOC and do finalization for REG_DG_016_021_022$")
 	public void notoc() throws IOException {
 		//CCOCFULL
-				home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToOPR017()
+				/*home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToOPR017()
 				.generateNOTOC(data.get("carrierCode"), data.get("fltNo"), data.get("fltDt"), data.get("prefix"), data.get("awbNo1"))
-				.close();			
+				.close();	*/		
 	}
 	
 	
 	@And("^Check for NTM message trigger for REG_DG_016_021_022$")
 	public void msgcgheck() throws IOException {
 		//ASYSANL
-				home.SwitchRoleGroupParameter(data.get("origin"), "ASYSANL").goToMSG005()
+				/*home.SwitchRoleGroupParameter(data.get("origin"), "ASYSANL").goToMSG005()
 				.CheckNTMMessageStatus(data.get("fltNo"), data.get("msgStatus"))
-				.close();
+				.close();*/
 				
 	}
 	
@@ -142,9 +142,9 @@ public class DGFlow11_MsgsValidation extends BaseSetup {
 	public void reopenNTM() throws IOException {
 		//ASYSANL
 		//CCOCFULL
-		home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToOPR017()
+	/*	home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToOPR017()
 		.ReopenNOTOC(data.get("carrierCode"), data.get("fltNo"), data.get("fltDt"))
-		.close();	
+		.close();	*/
 				
 	}
 	
@@ -152,9 +152,9 @@ public class DGFlow11_MsgsValidation extends BaseSetup {
 	@Then("^Recheck for NTM message trigger for REG_DG_016_021_022$")
 	public void recheckmsg() throws IOException {
 		//ASYSANL
-				home.SwitchRoleGroupParameter(data.get("origin"), "ASYSANL").goToMSG005()
+			/*	home.SwitchRoleGroupParameter(data.get("origin"), "ASYSANL").goToMSG005()
 				.CheckNTMMessageStatus(data.get("fltNo"), data.get("msgStatus"))
-				.close();
+				.close();*/
 				
 		test.log(LogStatus.INFO, "------------------------------------Ending test of NTM message sent validation after NOTOC finalization------------------------------");
 		logger.info("------------------------------------Ending test of NTM message sent validation after NOTOC finalization------------------------------");
