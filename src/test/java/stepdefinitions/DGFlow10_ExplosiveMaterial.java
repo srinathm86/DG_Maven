@@ -40,7 +40,7 @@ public class DGFlow10_ExplosiveMaterial extends BaseSetup {
 		String[] ClassName = classname.split("\\.");
 		test = extent.startTest(ClassName[1]);
 		base.test = test;
-		Generic gen = new Generic(base.driver, browserName,"DGFlow10.properties",base.test);
+		Generic gen = new Generic(base.driver, browserName,"DG_NOTOC.properties",base.test);
 		test.log(LogStatus.INFO, "------------------------------------Starting test of Explosive material shipment------------------------------");
 		logger.info("------------------------------------Starting test of Explosive material shipment------------------------------");
 		home = gen.login("00247319");

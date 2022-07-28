@@ -45,7 +45,7 @@ public class DGFlow11_MsgsValidation extends BaseSetup {
 		String[] ClassName = classname.split("\\.");
 		test = extent.startTest(ClassName[1]);
 		base.test = test;
-		Generic gen = new Generic(base.driver, browserName,"DGFlow11.properties",base.test);
+		Generic gen = new Generic(base.driver, browserName,"DG_NOTOC.properties",base.test);
 		test.log(LogStatus.INFO, "------------------------------------Starting test of NTM message sent validation after NOTOC finalization------------------------------");
 		logger.info("------------------------------------Starting test of NTM message sent validation after NOTOC finalization------------------------------");
 		home = gen.login("00247319");
