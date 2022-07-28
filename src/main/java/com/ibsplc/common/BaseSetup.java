@@ -91,7 +91,7 @@ public class BaseSetup implements ITestListener {
 		System.out.println("on test fail");
 	//		this.test.log(LogStatus.FAIL, "The test failed, please refer below screenshot" );
 	//		captureAndAddScreenshot();
-			extent.endTest(test);
+//			extent.endTest(test);
 	//		this.driver.quit();
 		
 }

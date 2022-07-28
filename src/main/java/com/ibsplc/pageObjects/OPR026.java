@@ -6614,12 +6614,12 @@ public class OPR026 extends BasePage {
 		click(btn_execute);
 		test.log(LogStatus.INFO, "Clicked on button : execute");
 //		continueEmbargo();
-//		maxWait();
-//		maxWait();
+		maxWait();
+		maxWait();
 		handleAlert("Accept", "OPR026");
 		waitForFrameAndSwitch(screenFrame);
 //		maxWait();
-		/*maxWait();
+		maxWait();
 		try {
 			waitForFrameAndSwitch("popupContainerFrame");
 			if (verifyElementPresent(
@@ -6637,8 +6637,8 @@ public class OPR026 extends BasePage {
 		handleAlert("Accept", "OPR026");
 		waitForFrameAndSwitch(screenFrame);
 		maxWait();
-		minWait();*/
-		maxWait();
+//		minWait();
+//		maxWait();
 		maxWait();
 //		maxWait();
 		String actualValue= waitForElement(By.xpath("(//label[text()='Status']//following-sibling::span/span)[2]")).getText();

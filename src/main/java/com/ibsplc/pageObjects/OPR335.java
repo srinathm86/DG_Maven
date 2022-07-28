@@ -1875,7 +1875,6 @@ public class OPR335 extends BasePage {
 		return this;
 	}
 
-
 	/**
 	 * Clears the form
 	 * 
@@ -5459,16 +5458,16 @@ public class OPR335 extends BasePage {
 					selectByText(By.xpath("//input[contains(@value,'Packaging conforms with packing instruction and is free from damage or leaking')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'Same number and type of packaging and overpacks delivered as shown on DGD')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'Symbol and Specification Code')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-//					selectByText(By.xpath("//input[contains(@value,'X,Y or Z meets or exceeds Packing Group/Packing instruction requirements')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-//					selectByText(By.xpath("//input[contains(@value,'Gross Weight within limits')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-					selectByText(By.xpath("//input[contains(@value,'UN or ID number(s), preceded by prefix [7.1.4.1(a)]')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'X,Y or Z meets or exceeds Packing Group/Packing instruction requirements')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'Gross Weight within limits')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'UN or ID numbers(s), preceded by prefix [7.1.4.1(a)]')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'The Proper Shipping Name and the technical name in brackets for entries with a star')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-					selectByText(By.xpath("//input[contains(@value,'The full name(s) and Address(es) of Shipper and Cosignee')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'The full name(s) and Address(es) of Shipper and Consignee')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'For consignments of more than one package of all classes')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'The Special Marking requirements shown for Packing Instruction 202')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'Limited Quantities Mark')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'Environmentally Hazardous Substance Mark')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-					selectByText(By.xpath("//input[contains(@value,'All required marks are displayed correctly')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'All Required Marks are displayed correctly')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'The label(s) identifying the Primary Hazard as per 4.2, Column D')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'he label(s) identifying the Subsidiary Hazard as per 4.2 Column D')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 				    selectByText(By.xpath("//input[contains(@value,'Orientation labels on two opposite sides (for liquids in combination packages or overpacks)?')]/parent::label/../following-sibling::div[1]/select"),"Yes");
@@ -5476,8 +5475,8 @@ public class OPR335 extends BasePage {
 					selectByText(By.xpath("//input[contains(@value,'Keep Away from Heat label, if applicable')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'All required labels are displayed correctly')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'All irrelevant marks and labels removed or obliterated')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-					selectByText(By.xpath("//input[contains(@value,'Packaging use marks and hazard and handling labels')]/parent::label/../following-sibling::div[1]/select"),"Yes");
-					selectByText(By.xpath("//input[contains(@value,'The word Overpack marked if marks and labels are not visible')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'Packaging use marks, hazard and handling labels')]/parent::label/../following-sibling::div[1]/select"),"Yes");
+					selectByText(By.xpath("//input[contains(@value,'The word Overpack marked if the marks and labels are not visible')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'If more than one overpack is used, identification marks shown and total quantity of dangerous goods [7.1.7.3]')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'Has the shipper complied with all State variations')]/parent::label/../following-sibling::div[1]/select"),"Yes");
 					selectByText(By.xpath("//input[contains(@value,'Has the shipper complied with all Operator variations')]/parent::label/../following-sibling::div[1]/select"),"Yes");
