@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="DG" parallel="classes" thread-count="2">
+<suite name="DG" parallel="classes" thread-count="3">
 	<parameter name="browser" value="SAUCE_LABS" />
-	 <parameter name="portalURL" value="https://icargocloud-aastg.ibsplc.aero/aastag/loginFlow" /> 
-	<!--<parameter name="portalURL" value="https://icargo.ibsplc.aero/aapss"/>-->
-	<parameter name="UserName" value="00247319" />
-	<parameter name="Password" value="weblogic" />
+	<parameter name="portalURL" value="https://icargocloud-aastg.ibsplc.aero/aastag/loginFlow" /> 
+	<parameter name="userName" value="00247319" />
+	<parameter name="password" value="weblogic" />
+	<parameter name="companyCode" value="AA" />
 	<listeners>
 		<listener class-name="com.ibsplc.common.BaseSetup" />
 	</listeners>
 	<test name="Regression" preserve-order="false">
 		<classes>
+		<class name="runner.DGFlow10" />
+			<!-- <class name="runner.DGFlow01" />
+			<class name="runner.DGFlow02" />
+			<class name="runner.DGFlow03" />
+			<class name="runner.DGFlow04" />
+			<class name="runner.DGFlow05" />
 			<class name="runner.DGFlow10" />
-			<class name="runner.DGFlow11" />
+			<class name="runner.DGFlow11" /> -->
 		</classes>
 	</test>
 </suite>
