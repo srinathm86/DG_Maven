@@ -68,6 +68,9 @@ public class BaseSetup implements ITestListener {
     public static ExtentReports extent;
     public ExtentTest test;
     public String run;
+    protected static int cell_awbNo = 4;
+    protected static int cell_awbNo2 = 5;
+    protected static int cell_flightno= 9;
     public ITestResult iTestResult;
     String SAUCE_USERNAME = "sso-aa-Sharath.Madananth";
 	String SAUCE_ACCESS_KEY = "ffa62482-99ff-45c3-8044-557e05d6e503";
@@ -374,6 +377,7 @@ public class BaseSetup implements ITestListener {
 	                  capabilities.setCapability("version", "latest");
 	                  capabilities.setCapability("name", "iCargo Test");
 	                  capabilities.setCapability("screenResolution", "1280x800");
+	                  capabilities.setCapability("maxDuration", "10800");
 //	                  capabilities.setCapability("parentTunnel", tunnel);
 //	                  capabilities.setCapability("tunnelIdentifier", "LAB");
 	                  driver = new RemoteWebDriver(new java.net.URL(SAUCE_URL), capabilities);

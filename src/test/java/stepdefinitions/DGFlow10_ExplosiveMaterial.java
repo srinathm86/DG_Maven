@@ -49,7 +49,7 @@ public class DGFlow10_ExplosiveMaterial extends BaseSetup {
 
 	@And("^DG Booking in CAP018 screen for REG_DG_009$")
 	public void performGoodsAcceptance() throws Exception {
-		/*home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL") 
+		home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL") 
 		.goToFLT002()
 	    .fetchFlightDetails(data.get("origin"), data.get("dest"), data.get("fltDt"), data.get("aircraftType"),"fltNo","arrivalDt1",data)
         .close();
@@ -66,42 +66,42 @@ public class DGFlow10_ExplosiveMaterial extends BaseSetup {
 		.saveInCAP018AndVerifyUBRnStatusDirect("awbNo1", "",data)
 		.close();
 		
-		testData.writeDatatoExcelCell(10, data.get("awbNo1"), cell_awbNo, filename);*/
+		testData.writeDatatoExcelCell(10, data.get("awbNo1"), cell_awbNo, filename);
 	}
 	
 	@And("^Do DG capture in OPR026 screen for REG_DG_009$")
 	public void performCapture() throws IOException {
 		//OCTRAGT
-	/*	home.SwitchRoleGroupParameter(data.get("origin"), "OCTRAGT")
+		home.SwitchRoleGroupParameter(data.get("origin"), "OCTRAGT")
 		.goToOPR026()
 		.ProcessExecuteafterBooking(data.get("prefix"), data.get("awbNo1"), data.get("shipper"), data.get("consignee"))
-		.close();*/
+		.close();
 	}
 	
 	@And("^Do Capture DG details in OPR350 screen for REG_DG_009$")
 	public void captureDGDetails() throws IOException {
-		/*home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToOPR350()
+		home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToOPR350()
 		.CaptureDGDetailsPropertyFile(data.get("awbNo1"), data.get("emergencyName"), data.get("emergencyContact"))
 		.CaptureUnidDetailsForPropertyFile(data.get("awbNo1"), data.get("unidNo1"), data.get("pcs"), data.get("wt"), data.get("piValue"), "", false)
-		.close();*/
+		.close();
 	}
 	
 	@And("^Do DG Goods Acceptance in OPR335 screen for REG_DG_009$")
 	public void performAcceptance() throws IOException {
 		//OMGR
-		/*home.SwitchRoleGroupParameter(data.get("origin"), "OMGR").goToOPR335()
+		home.SwitchRoleGroupParameter(data.get("origin"), "OMGR").goToOPR335()
 		.processGoodsAcceptanceWithCheckSheetwithDGPopUp(data.get("prefix"), data.get("awbNo1"),data.get ("Location"), data.get("pcs"), data.get("wt"), data.get("screening_method"), data.get("unidNo"))
-		.close();*/
+		.close();
 	}
 	
 	
 	@And("^Check for XSDG message trigger in MSG005 for REG_DG_009$")
 	public void buildupExport() throws IOException {
 		//ASYSANL
-		/*home.SwitchRoleGroupParameter(data.get("origin"), "ASYSANL").goToMSG005()
+		home.SwitchRoleGroupParameter(data.get("origin"), "ASYSANL").goToMSG005()
 		.CheckXsDGMessageStatus(data.get("awbNo1"), data.get("msgStatus"))
 		.close();
-		*/
+		
 		test.log(LogStatus.INFO, "------------------------------------Ending test of Explosive material shipment------------------------------");
 		logger.info("------------------------------------Ending test of Explosive material shipment------------------------------");
 	}

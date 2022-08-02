@@ -66,22 +66,19 @@ public class LoginPage extends BasePage {
     }
     
     public HomePage doLogin(){
-
-//    	String username = PropertyHandler.getPropValue(dataFilePath, "username");
-//      String password = PropertyHandler.getPropValue(dataFilePath, "password");
-//      String Companycode = PropertyHandler.getPropValue(dataFilePath, "Companycode");
-//    	String username=XmlRead.Read("LoginID");
-//    	String password ="";
-    	String username =  Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("UserName");
-    	String password =  Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("Password");
-    	click(driver.findElement(By.xpath("//label[@for='userID']")));
-    	enterKeys(txt_usrname,username);
-    	click(driver.findElement(By.xpath("//label[@for='password']")));
-        enterKeys(txt_password,password);
-//        enterKeys(txt_cmpnyCod,Companycode);
-       click(btn_login);
+    	String username = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("userName");
+		String password = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("password");
+		String companyCode = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest()
+				.getParameter("companyCode");
+		enterKeys(By.name("username"), username);
+		enterKeys(By.name("j_password"), password);
+		enterKeys(By.name("companyCode"), companyCode);
+		minWait();
+		click(By.name("btOk"));
         switch (browser.toUpperCase()){
             case "CHROME":
+            case "SAUCE_LABS":
+    		case "WEBDRIVER_MANAGER":
                 waitForNewWindow(2);
                 moveToSecondWindow();
                 break;

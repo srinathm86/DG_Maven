@@ -10603,7 +10603,7 @@ public class CAP018 extends BasePage {
 		click(btn_popUp_Ok);
 		switchBackToFirstWindow();*/
 		// waitForFrameAndSwitch(screenFrame);
-//		maxWait();
+		maxWait();
 //		maxWait();
 //		if (driver.getWindowHandles().size() > 1) {
 		if(getNumberOfWindows()>1) {
@@ -14032,12 +14032,12 @@ public class CAP018 extends BasePage {
 		}
 		selectByText(sel_WeightUnit, "Pound"); // case-sensitive
 		selectByText(sel_VolumeUnit, "Cubic Feet");// case-sensitive
-		try{
-		if(PropertyHandler.getPropValue(dataFilePath, "unit").equalsIgnoreCase("kg")){
+//		try{
+//		if(PropertyHandler.getPropValue(dataFilePath, "unit").equalsIgnoreCase("kg")){
 			selectByText(sel_WeightUnit, "Kilogram"); // case-sensitive
 			selectByText(sel_VolumeUnit, "Cubic Meters");// case-sensitive
-		}}catch(Exception e){
-		}
+//		}}catch(Exception e){
+//		}
 		enterKeys(txt_productname, Product);
 		enterKeys(txt_commCode, commCode);
 		enterKeys(txt_commPcs, pcs);

@@ -62,17 +62,17 @@ public class DGFlow11_MsgsValidation extends BaseSetup {
 		
 		
 		
-		testData.writeDatatoExcelCell(11, data.get("fltNo"), 9, filename);
+		testData.writeDatatoExcelCell(11, data.get("fltNo"), cell_flightno, filename);
 	
 		home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToCAP018()
-		.enterInitialBookingDetailsforPropertyfile(data.get("origin"), data.get("dest"), data.get("agentCode"), data.get("Product"), data.get("pcs"), data.get("wt"), data.get("vol"),
+		.enterInitialBookingDetailsforPropertyfile(data.get("origin"), data.get("dest"), data.get("agentCode"), data.get("product"), data.get("pcs"), data.get("wt"), data.get("vol"),
 				data.get("fltDt"), data.get("ULDType"), data.get("ULDwt"), data.get("commCode"))
 		.enterFlightDetailsforPropertyFile(data.get("origin"), data.get("dest"), data.get("fltDt"), data.get("carrierCode"), data.get("fltNo"),1)
 		.handleDGpopUpForPropertyFile(data.get("emergencyName"), data.get("emergencyContact"), data.get("pcs"), 
 				 data.get("wt"), data.get("commCode"), data.get("unidNo1"), data.get("shippingName1"), 1)
 		.saveInCAP018AndVerifyUBRnStatusDirect("awbNo1", "",data)
 		.close();
-		testData.writeDatatoExcelCell(11, data.get("awbNo1"), 4, filename);
+		testData.writeDatatoExcelCell(11, data.get("awbNo1"), cell_awbNo, filename);
 	}
 	
 	@And("^Do DG capture in OPR026 screen for REG_DG_016_021_022$")

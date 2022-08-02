@@ -2215,7 +2215,7 @@ public class FLT002 extends BasePage{
 				drp_Aircraft.selectByVisibleText(aircraftType);
 				}
 				// Fill From Date
-				enterKeys(By.xpath("//input[@id='fromDate']"), Keys.TAB);
+				enterKeys(By.xpath("//input[@id='fromDate']"), fromDate+ Keys.TAB);
 //				driver.findElement(By.xpath("//input[@id='fromDate']")).clear();
 //				driver.findElement(By.xpath("//input[@id='fromDate']")).sendKeys(fromDate + Keys.TAB);
 
@@ -2223,7 +2223,7 @@ public class FLT002 extends BasePage{
 
 				// Fill To Date
 				if (toDate != null) {
-					enterKeys(By.xpath("//input[@id='toDate']"), Keys.TAB);
+					enterKeys(By.xpath("//input[@id='toDate']"),toDate+ Keys.TAB);
 //				driver.findElement(By.xpath("//input[@id='toDate']")).clear();
 //				driver.findElement(By.xpath("//input[@id='toDate']")).sendKeys(
 //				toDate + Keys.TAB);
@@ -2250,9 +2250,11 @@ public class FLT002 extends BasePage{
 				try {
 				flight = waitForElement(By.xpath("//*[@id=\"_fltListTable\"]//td[2]")).getText() + " " +waitForElement(By.xpath("//*[@id=\"_fltListTable\"]//td[10]")).getText().substring(0, 11);
 				test.log(LogStatus.INFO, "Flight: "+flight+ " is being used for this booking");
+				logger.info("Flight: "+flight+ " is being used for this booking");
 				} catch (Exception e) {
 				logger.info("No flights Found");
 				test.log(LogStatus.FAIL, "No flights found for requested OD pair: "+origin+"-"+dest);
+				logger.info("No flights found for requested OD pair: "+origin+"-"+dest);
 				}
 				return flight;
 				}
