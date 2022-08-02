@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="DG" parallel="classes" thread-count="6">
+<suite name="DG" parallel="classes" thread-count="7">
 	<parameter name="browser" value="SAUCE_LABS" />
 	<parameter name="portalURL" value="https://icargocloud-aastg.ibsplc.aero/aastag/loginFlow" /> 
 	<parameter name="userName" value="00247319" />
