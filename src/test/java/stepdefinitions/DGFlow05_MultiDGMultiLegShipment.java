@@ -57,7 +57,7 @@ private BaseSetup base;
 	@Then("^verify booking for multiple DGs works fine for DG18$")
 	public void performBooking18() throws Exception {
 	
-		home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToCAP018()
+		/*home.SwitchRoleGroupParameter(data.get("origin"), "CCOCFULL").goToCAP018()
 		.enterInitialBookingDetailsforPropertyfile(data.get("origin"), data.get("dest"), data.get("agentCode"), data.get("product"), data.get("pcs"), data.get("wt"), data.get("vol"),
 				data.get("fltDt"), data.get(""), data.get("ULDwt"), data.get("commCode"))
 		.enterFlightDetailsforPropertyFile(data.get("origin"), data.get("intermediate"), data.get("fltDt"), data.get("carrierCode"), data.get("fltNo1"), 1)
@@ -67,7 +67,7 @@ private BaseSetup base;
 		.saveInCAP018AndVerifyUBRnStatusDirect("awbNo1", "", data)
 		.close();
 		testData.writeDatatoExcelCell(5, data.get("awbNo1"), cell_awbNo, filename);
-		
+		*/
 		test.log(LogStatus.INFO, "------------------------------------Ending test for Multi DG shipment------------------------------");
 		logger.info("------------------------------------Ending test for Multi DG shipment------------------------------");
 
