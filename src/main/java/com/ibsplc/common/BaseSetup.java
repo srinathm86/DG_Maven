@@ -32,6 +32,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
@@ -336,7 +337,7 @@ public class BaseSetup implements ITestListener {
 
 		              driver = new InternetExplorerDriver(capabilities);
 		              break;
-		          case "CHROME":
+		          case "CHROMEOLD":
 		              capabilities = DesiredCapabilities.chrome();
 		              String sc2 = System.getProperty("user.dir");
 		              String pathc = sc2 + "\\lib\\chromedriver.exe";
@@ -363,9 +364,14 @@ public class BaseSetup implements ITestListener {
 		              break;
 		              
 		              
-		          case "WEBDRIVER_MANAGER":
+		          case "CHROME":
 		        	  WebDriverManager.chromedriver().setup();
 		        	  driver = new ChromeDriver();
+		        	  break;
+		        	 
+		          case "EDGE":
+		        	  WebDriverManager.edgedriver().setup();
+		        	  driver = new EdgeDriver();
 		        	  break;
 
 		          case "SAUCE_LABS":

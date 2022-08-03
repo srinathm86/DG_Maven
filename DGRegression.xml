@@ -10,14 +10,13 @@
 	</listeners>
 	<test name="Regression" preserve-order="true">
 		<classes>
-		<class name="runner.DGFlow05" />
-			<!-- <class name="runner.DGFlow01" />
+			<class name="runner.DGFlow01" />
 			<class name="runner.DGFlow02" />
-			<class name="runner.DGFlow03" />
+			<!-- <class name="runner.DGFlow03" />
 			<class name="runner.DGFlow04" />
-			<class name="runner.DGFlow05" />
+			<class name="runner.DGFlow05" /> -->
 			<class name="runner.DGFlow10" />
-			<class name="runner.DGFlow11" /> -->
+			<!-- <class name="runner.DGFlow11" /> -->
 		</classes>
 	</test>
 </suite>

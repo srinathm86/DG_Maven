@@ -76,7 +76,8 @@ public class LoginPage extends BasePage {
 		minWait();
 		click(By.name("btOk"));
         switch (browser.toUpperCase()){
-            case "CHROME":
+        	case "EDGE":
+        	case "CHROME":
             case "SAUCE_LABS":
     		case "WEBDRIVER_MANAGER":
                 waitForNewWindow(2);
